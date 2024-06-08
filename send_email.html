@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylebook.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <title>Natipuan Beach Resort | Book Now</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><i class="ri-home-line"></i><span>Natipuan Beach Resort</span></a>
+        <div id="menu-icon" class="menu-icon">
+            <i class="ri-menu-line"></i>
+        </div>
+        <center>
+            <ul class="navbar">
+                <li><a href="index.html" class="active">Home</a></li>
+            </ul>
+        </center>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <form id="bookingForm" action="send_email.html" method="post" onsubmit="handleFormSubmit(event)">
+                <div class="input-box">
+                    <label for="name">Full Name</label>
+                    <input type="text" placeholder="Enter Full Name" name="name" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="Enter valid email address" name="email" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" placeholder="Enter phone number" name="phone" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="pax">Number of Pax</label>
+                    <input type="text" placeholder="Enter Number of Pax" name="pax" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="checkin">Specify date and time of Check in:</label>
+                    <input type="datetime-local" name="checkin" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="checkout">Specify date and time of Check out:</label>
+                    <input type="datetime-local" name="checkout" required>
+                </div>
+
+                <div class="input-box">
+                    <button type="submit" class="btn">Book Now</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuIcon = document.getElementById('menu-icon');
+            const navbar = document.querySelector('.navbar');
+        
+            menuIcon.addEventListener('click', function() {
+                navbar.classList.toggle('open');
+            });
+        });
+    
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            alert('Booking successful. We will contact you shortly.'); // Display a success message
+            document.getElementById('bookingForm').reset(); // Reset the form fields
+        }
+    </script>
+    
+</body>
+</html>
